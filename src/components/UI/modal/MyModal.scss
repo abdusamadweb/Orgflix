@@ -1,0 +1,60 @@
+@use './src/scss' as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00000050;
+  overflow: auto;
+  z-index: 15;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .bg {
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+  }
+
+  &__content {
+    position: relative;
+    width: 50%;
+    padding: 35px;
+    border-radius: 12px;
+    background: $body-bg;
+    transform: translateY(-250px);
+    opacity: 0;
+    transition: transform 0.5s ease,
+    opacity 0.5s ease;
+    z-index: 5;
+    
+    .icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 18px;
+      color: $txt-color;
+      transition: color 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+    
+    @include tablet {
+      width: 80%;
+    }
+  }
+
+  &.active &__content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

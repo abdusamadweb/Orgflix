@@ -1,0 +1,43 @@
+@use "./src/scss" as *;
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 3rem;
+
+  @include tablet {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  &__loadmore {
+    text-align: center;
+  }
+}
+
+.movie-search {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: $border-radius 0 0 $border-radius;
+    border: 1px solid transparent;
+    outline: none;
+    transition: border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+    &:focus {
+      border: 1px solid #272a3a;
+      box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    }
+  }
+
+  button {
+    border-radius: 0 $border-radius $border-radius 0;
+
+
+  }
+}
