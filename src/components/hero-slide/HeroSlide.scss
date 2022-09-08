@@ -5,6 +5,10 @@
   margin-bottom: 50px;
   overflow: hidden;
 
+  @include mobile {
+    height: 85vh;
+  }
+
   .swiper-container {
     height: 100%;
   }
