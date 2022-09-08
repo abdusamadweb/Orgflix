@@ -51,6 +51,10 @@
     margin-left: auto;
     margin-right: auto;
 
+    @include mobile {
+      padding: 0;
+    }
+
     &__poster {
       flex: 1;
       max-width: 350px;
@@ -85,6 +89,10 @@
       font-weight: 500;
       font-size: 62px;
       line-height: 1;
+
+      @include mobile {
+        font-size: 38px;
+      }
     }
 
     &__genres {
